@@ -1,4 +1,4 @@
-/* ==== БАЗОВЫЕ СТИЛИ ==== */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -6,7 +6,7 @@ body {
     min-height: 100vh;
 }
 
-/* ==== КОНТЕЙНЕР СТРАНИЦЫ ==== */
+
 .page-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -15,7 +15,7 @@ body {
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
 }
 
-/* ==== ШАПКА ==== */
+
 .header {
     color: white;
     text-align: center;
@@ -25,7 +25,7 @@ body {
     letter-spacing: 2px;
 }
 
-/* ==== НАВИГАЦИЯ ==== */
+
 .nav {
     padding: 20px 0;
 }
@@ -57,14 +57,14 @@ body {
     transform: translateY(-2px);
 }
 
-/* ==== ОСНОВНОЙ КОНТЕНТ ==== */
+
 .content {
     padding: 40px;
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* ==== ГЛАВНАЯ СТРАНИЦА (Профессиональный синий) ==== */
+
 body.main-page {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
@@ -102,7 +102,7 @@ body.main-page {
     border-left: 4px solid #3498db;
 }
 
-/* ==== СТРАНИЦА НОВОСТЕЙ (Теплый оранжевый) ==== */
+
 body.news-page {
     background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
 }
@@ -135,7 +135,7 @@ body.news-page {
     border-bottom: 1px solid #fad7a0;
 }
 
-/* ==== СТРАНИЦА ТОВАРОВ (Природный зеленый) ==== */
+
 body.goods-page {
     background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
 }
@@ -173,7 +173,7 @@ body.goods-page {
     box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
 }
 
-/* ==== СТРАНИЦА КОНТАКТОВ (Элегантный фиолетовый) ==== */
+
 body.contacts-page {
     background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 100%);
 }
@@ -206,7 +206,6 @@ body.contacts-page {
     box-shadow: 0 6px 20px rgba(142, 68, 173, 0.4);
 }
 
-/* ==== ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ СТРАНИЦ ==== */
 .profile-header {
     text-align: center;
     margin-bottom: 40px;
@@ -303,7 +302,7 @@ body.contacts-page {
     margin: 0;
 }
 
-/* ==== СТРАНИЦА НОВОСТЕЙ ==== */
+
 .news-section {
     margin-top: 30px;
 }
@@ -323,7 +322,7 @@ body.contacts-page {
     margin: 0;
 }
 
-/* ==== СТРАНИЦА ТОВАРОВ ==== */
+
 .goods-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -355,7 +354,6 @@ body.contacts-page {
     font-weight: 600;
 }
 
-/* ==== СТРАНИЦА КОНТАКТОВ ==== */
 .contacts-card {
     text-align: center;
     max-width: 500px;
@@ -384,7 +382,7 @@ body.contacts-page {
     transform: translateY(-2px);
 }
 
-/* ==== ФУТЕР ==== */
+
 .footer {
     color: white;
     text-align: center;
@@ -392,7 +390,6 @@ body.contacts-page {
     margin-top: 50px;
 }
 
-/* ==== АДАПТИВНОСТЬ ==== */
 @media (max-width: 768px) {
     .nav-list {
         flex-direction: column;
