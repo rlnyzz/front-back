@@ -1,4 +1,4 @@
-/* ==== БАЗОВЫЕ СТИЛИ ==== */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -7,7 +7,7 @@ body {
     min-height: 100vh;
 }
 
-/* ==== КОНТЕЙНЕР СТРАНИЦЫ ==== */
+
 .page-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -16,7 +16,7 @@ body {
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
 }
 
-/* ==== ШАПКА ==== */
+
 .header {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: white;
@@ -27,7 +27,7 @@ body {
     letter-spacing: 2px;
 }
 
-/* ==== НАВИГАЦИЯ ==== */
+
 .nav {
     background: #2c3e50;
     padding: 20px 0;
@@ -60,14 +60,14 @@ body {
     transform: translateY(-2px);
 }
 
-/* ==== ОСНОВНОЙ КОНТЕНТ ==== */
+
 .content {
     padding: 40px;
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* ==== ГЛАВНАЯ СТРАНИЦА ==== */
+
 .profile-header {
     text-align: center;
     margin-bottom: 40px;
@@ -113,7 +113,7 @@ body {
     line-height: 1.8;
 }
 
-/* ==== НАВЫКИ ==== */
+
 .skills-container {
     display: flex;
     justify-content: center;
@@ -138,7 +138,7 @@ body {
     box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
 }
 
-/* ==== ОПЫТ РАБОТЫ ==== */
+
 .experience-section {
     margin-top: 50px;
 }
@@ -178,7 +178,7 @@ body {
     margin: 0;
 }
 
-/* ==== СТРАНИЦА НОВОСТЕЙ ==== */
+
 .news-section {
     margin-top: 30px;
 }
@@ -201,7 +201,7 @@ body {
     margin: 0;
 }
 
-/* ==== СТРАНИЦА ТОВАРОВ ==== */
+
 .goods-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -229,7 +229,7 @@ body {
     font-weight: 600;
 }
 
-/* ==== СТРАНИЦА КОНТАКТОВ ==== */
+
 .contacts-card {
     text-align: center;
     max-width: 500px;
@@ -260,7 +260,7 @@ body {
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-/* ==== ФУТЕР ==== */
+
 .footer {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: white;
@@ -269,7 +269,7 @@ body {
     margin-top: 50px;
 }
 
-/* ==== АДАПТИВНОСТЬ ==== */
+
 @media (max-width: 768px) {
     .nav-list {
         flex-direction: column;
