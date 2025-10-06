@@ -3,42 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт компании</title>
+    <title>Товары</title>
+    <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
+    <div class="page-container">
+        <header class="header">
+            <h1>Хэдер</h1>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
 
-    <header>
-        <h1>Хэдер</h1>
-    </header>
+        <div class="content">
+            <section class="goods-section">
+                <h2 class="section-title">Наши товары</h2>
+                
+                <div class="goods-container">
+                    <div class="goods-card experience-card">
+                        <img class="goods-image" src="../images/крыса.jpg" alt="Зверушка 1">
+                        <h3 class="goods-title experience-title">Зверушка 1</h3>
+                        <p class="goods-price experience-desc">Цена зверушки 1</p>
+                    </div>
 
+                    <div class="goods-card experience-card">
+                        <img class="goods-image" src="../images/котэк.jpg" alt="Зверушка 2">
+                        <h3 class="goods-title experience-title">Зверушка 2</h3>
+                        <p class="goods-price experience-desc">Цена зверушки 2</p>
+                    </div>
 
-    <nav>
-        <ul>
-            <li>Главная</li>
-            <li>Новости</li>
-            <li>Практики</li>
-            <li>Товары</li>
-            <li>Контакты</li>
-        </ul>
-    </nav>
+                    <div class="goods-card experience-card">
+                        <img class="goods-image" src="../images/гусяра.jpg" alt="Зверушка 3">
+                        <h3 class="goods-title experience-title">Зверушка 3</h3>
+                        <p class="goods-price experience-desc">Цена зверушки 3</p>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-   
-    <main>
-        <section>
-            <img src = "images/крыса.jpg" width = "500">
-            <h2>Зверушка 1</h2>
-            <p>Цена зверушки 1</p>
-        </section>
-        <section>
-            <img src = "images/котэк.jpg" width = "500">
-            <h2>Зверушка 2</h2>
-            <p>Цена зверушки 2</p>
-        </section>
-        <section>
-            <img src = "images/гусяра.jpg" width = "500">
-            <h2>Зверушка 3</h2>
-            <p>Цена зверушки 3</p>
-        </section>
-    </main>
+        <footer class="footer">
+            <p>Футер</p>
+        </footer>
+    </div>
 </body>
 </html>

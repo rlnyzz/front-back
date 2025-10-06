@@ -3,61 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт компании</title>
+    <title>Новости</title>
+    <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-  
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">Новости</a></li>
-            <li><a href="#">Практики</a></li>
-            <li><a href="#">Товары</a></li>
-            <li><a href="#">Контакты</a></li>
-        </ul>
-    </nav>
+    <div class="page-container">
+        <header class="header">
+            <h1>Хэдер</h1>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
 
-    
-    <div class="container">
-        <section class="news-section">
-           
-            <article class="news-item">
-                <h2 class="news-title">Шокирущая новость 1</h2>
-                <div class="news-meta">
-                    <time datetime="2025-01-01T12:00">09.06.2025 12:00</time> | Сысоев В.В.
-                </div>
-                <div class="news-content">
-                    <p>Текст новости 1. Я хорошо покушал</p>
-                </div>
-            </article>
+        <div class="content">
+            <section class="news-section">
+                <h2 class="section-title">Новости компании</h2>
+                
+                <article class="news-item experience-card">
+                    <h3 class="news-title experience-title">Шокирующая новость 1</h3>
+                    <div class="news-meta">
+                        <time datetime="2025-06-09T12:00">09.06.2025 12:00</time> | Сысоев В.В.
+                    </div>
+                    <div class="news-content experience-desc">
+                        <p>Текст новости 1. Я хорошо покушал</p>
+                    </div>
+                </article>
 
-           
-            <article class="news-item">
-                <h2 class="news-title">Новость 2</h2>
-                <div class="news-meta">
-                    <time datetime="2025-01-01T12:00">10.06.2025 12:00</time> | Сысоев В.В.
-                </div>
-                <div class="news-content">
-                    <p>Текст новости 2. Я поспал</p>
-                </div>
-            </article>
+                <article class="news-item experience-card">
+                    <h3 class="news-title experience-title">Новость 2</h3>
+                    <div class="news-meta">
+                        <time datetime="2025-06-10T12:00">10.06.2025 12:00</time> | Сысоев В.В.
+                    </div>
+                    <div class="news-content experience-desc">
+                        <p>Текст новости 2. Я поспал</p>
+                    </div>
+                </article>
 
-          
-            <article class="news-item">
-                <h2 class="news-title">Новость 3</h2>
-                <div class="news-meta">
-                    <time datetime="2025-01-01T12:00">01.01.2025 12:00</time> | Сысоев В.В.
-                </div>
-                <div class="news-content">
-                    <p>Текст новости 3. Я покушал и поспал</p>
-                </div>
-            </article>
-        </section>
+                <article class="news-item experience-card">
+                    <h3 class="news-title experience-title">Новость 3</h3>
+                    <div class="news-meta">
+                        <time datetime="2025-01-01T12:00">01.01.2025 12:00</time> | Сысоев В.В.
+                    </div>
+                    <div class="news-content experience-desc">
+                        <p>Текст новости 3. Я покушал и поспал</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <p>Футер</p>
+        </footer>
     </div>
-
-
-    <footer>
-        <p>Футер</p>
-    </footer>
 </body>
 </html>
