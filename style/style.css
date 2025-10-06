@@ -1,13 +1,12 @@
-
+/* ==== БАЗОВЫЕ СТИЛИ ==== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
 }
 
-
+/* ==== КОНТЕЙНЕР СТРАНИЦЫ ==== */
 .page-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -16,9 +15,8 @@ body {
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
 }
 
-
+/* ==== ШАПКА ==== */
 .header {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: white;
     text-align: center;
     padding: 30px;
@@ -27,9 +25,8 @@ body {
     letter-spacing: 2px;
 }
 
-
+/* ==== НАВИГАЦИЯ ==== */
 .nav {
-    background: #2c3e50;
     padding: 20px 0;
 }
 
@@ -56,18 +53,160 @@ body {
 }
 
 .nav-link:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.2);
     transform: translateY(-2px);
 }
 
-
+/* ==== ОСНОВНОЙ КОНТЕНТ ==== */
 .content {
     padding: 40px;
     max-width: 900px;
     margin: 0 auto;
 }
 
+/* ==== ГЛАВНАЯ СТРАНИЦА (Профессиональный синий) ==== */
+body.main-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
 
+.main-page .header,
+.main-page .nav,
+.main-page .footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+}
+
+.main-page .nav-link:hover {
+    background: rgba(52, 152, 219, 0.3);
+}
+
+.main-page .profile-photo {
+    border: 4px solid #3498db;
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+}
+
+.main-page .about-me {
+    background: linear-gradient(135deg, #ebf5fb 0%, #d6eaf8 100%);
+    border-left: 5px solid #3498db;
+}
+
+.main-page .skill-tag {
+    background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.main-page .skill-tag:hover {
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.main-page .experience-card {
+    border-left: 4px solid #3498db;
+}
+
+/* ==== СТРАНИЦА НОВОСТЕЙ (Теплый оранжевый) ==== */
+body.news-page {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+}
+
+.news-page .header,
+.news-page .nav,
+.news-page .footer {
+    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+}
+
+.news-page .nav-link:hover {
+    background: rgba(230, 126, 34, 0.3);
+}
+
+.news-page .section-title {
+    color: #d35400;
+}
+
+.news-page .experience-card {
+    border-left: 4px solid #e67e22;
+    background: linear-gradient(135deg, #fffaf0 0%, #fdf2e9 100%);
+}
+
+.news-page .experience-title {
+    color: #e67e22;
+}
+
+.news-page .news-meta {
+    color: #e67e22;
+    border-bottom: 1px solid #fad7a0;
+}
+
+/* ==== СТРАНИЦА ТОВАРОВ (Природный зеленый) ==== */
+body.goods-page {
+    background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
+}
+
+.goods-page .header,
+.goods-page .nav,
+.goods-page .footer {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+}
+
+.goods-page .nav-link:hover {
+    background: rgba(46, 204, 113, 0.3);
+}
+
+.goods-page .section-title {
+    color: #27ae60;
+}
+
+.goods-page .experience-card {
+    border-left: 4px solid #27ae60;
+    background: linear-gradient(135deg, #f0fff4 0%, #e8f8ef 100%);
+}
+
+.goods-page .experience-title {
+    color: #27ae60;
+}
+
+.goods-page .goods-price {
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.goods-page .goods-image {
+    border: 3px solid #27ae60;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
+}
+
+/* ==== СТРАНИЦА КОНТАКТОВ (Элегантный фиолетовый) ==== */
+body.contacts-page {
+    background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 100%);
+}
+
+.contacts-page .header,
+.contacts-page .nav,
+.contacts-page .footer {
+    background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+}
+
+.contacts-page .nav-link:hover {
+    background: rgba(155, 89, 182, 0.3);
+}
+
+.contacts-page .section-title {
+    color: #8e44ad;
+}
+
+.contacts-page .experience-card {
+    border-left: 4px solid #8e44ad;
+    background: linear-gradient(135deg, #f8f7ff 0%, #f0ebff 100%);
+}
+
+.contacts-page .contact-button {
+    background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+    box-shadow: 0 4px 15px rgba(142, 68, 173, 0.3);
+}
+
+.contacts-page .contact-button:hover {
+    box-shadow: 0 6px 20px rgba(142, 68, 173, 0.4);
+}
+
+/* ==== ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ СТРАНИЦ ==== */
 .profile-header {
     text-align: center;
     margin-bottom: 40px;
@@ -75,7 +214,6 @@ body {
 
 .profile-title {
     font-size: 32px;
-    color: #2c3e50;
     margin-bottom: 10px;
     font-weight: 300;
 }
@@ -86,13 +224,11 @@ body {
     border-radius: 15px;
     object-fit: cover;
     margin: 20px auto;
-    border: 4px solid #667eea;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .profile-name {
     font-size: 24px;
-    color: #2c3e50;
     margin: 10px 0;
     font-weight: 500;
 }
@@ -104,15 +240,12 @@ body {
 }
 
 .about-me {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     padding: 25px;
     border-radius: 15px;
     margin: 30px 0;
-    border-left: 5px solid #667eea;
     font-size: 16px;
     line-height: 1.8;
 }
-
 
 .skills-container {
     display: flex;
@@ -123,21 +256,18 @@ body {
 }
 
 .skill-tag {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     color: white;
     padding: 12px 25px;
     border-radius: 25px;
     font-weight: 600;
     font-size: 14px;
-    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
 .skill-tag:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
 }
-
 
 .experience-section {
     margin-top: 50px;
@@ -145,19 +275,16 @@ body {
 
 .section-title {
     font-size: 28px;
-    color: #2c3e50;
     text-align: center;
     margin-bottom: 30px;
     font-weight: 300;
 }
 
 .experience-card {
-    background: white;
     padding: 25px;
     margin: 20px 0;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    border-left: 4px solid #667eea;
     transition: transform 0.3s ease;
 }
 
@@ -167,32 +294,27 @@ body {
 
 .experience-title {
     font-size: 20px;
-    color: #2c3e50;
     margin: 0 0 10px 0;
     font-weight: 600;
 }
 
 .experience-desc {
-    color: #7f8c8d;
     line-height: 1.6;
     margin: 0;
 }
 
-
+/* ==== СТРАНИЦА НОВОСТЕЙ ==== */
 .news-section {
     margin-top: 30px;
 }
 
 .news-meta {
-    color: #7f8c8d;
     font-size: 14px;
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #ecf0f1;
 }
 
 .news-content {
-    color: #34495e;
     line-height: 1.6;
     margin: 0;
 }
@@ -201,7 +323,7 @@ body {
     margin: 0;
 }
 
-
+/* ==== СТРАНИЦА ТОВАРОВ ==== */
 .goods-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -221,15 +343,19 @@ body {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.goods-image:hover {
+    transform: scale(1.05);
 }
 
 .goods-price {
     font-size: 18px;
-    color: #27ae60;
     font-weight: 600;
 }
 
-
+/* ==== СТРАНИЦА КОНТАКТОВ ==== */
 .contacts-card {
     text-align: center;
     max-width: 500px;
@@ -243,7 +369,6 @@ body {
 }
 
 .contact-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
     padding: 12px 30px;
@@ -257,19 +382,17 @@ body {
 
 .contact-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-
+/* ==== ФУТЕР ==== */
 .footer {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: white;
     text-align: center;
     padding: 30px;
     margin-top: 50px;
 }
 
-
+/* ==== АДАПТИВНОСТЬ ==== */
 @media (max-width: 768px) {
     .nav-list {
         flex-direction: column;
