@@ -6,53 +6,67 @@
     <title>Новости</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
-<body class="news-page">
-    <div class="page-container">
+<body class="page page--news">
+    <div class="theme-switcher">
+        <button class="theme-switcher__button" onclick="toggleTheme()">🌓 Сменить тему</button>
+    </div>
+    
+    <div class="page__container">
         <header class="header">
-            <h1>XЭДЕР</h1>
+            <h1 class="header__title">Новости компании</h1>
         </header>
         
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item nav__item--active">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
             </ul>
         </nav>
 
         <main class="content">
-            <section class="news-section">
-                <h2 class="section-title">Новости компании</h2>
+            <section class="news">
+                <h2 class="section__title">Новости компании</h2>
                 
-                <div class="news-container">
+                <div class="news__container">
                     <article class="news-card">
-                        <h3 class="news-title">Шокирующая новость 1</h3>
-                        <div class="news-meta">
+                        <h3 class="news-card__title">Шокирующая новость 1</h3>
+                        <div class="news-card__meta">
                             <time datetime="2025-06-09T12:00">09.06.2025 12:00</time> | Сысоев В.В.
                         </div>
-                        <div class="news-text">
+                        <div class="news-card__text">
                             <p>Текст новости 1. Я хорошо покушал</p>
                         </div>
                     </article>
 
                     <article class="news-card">
-                        <h3 class="news-title">Новость 2</h3>
-                        <div class="news-meta">
+                        <h3 class="news-card__title">Новость 2</h3>
+                        <div class="news-card__meta">
                             <time datetime="2025-06-10T12:00">10.06.2025 12:00</time> | Сысоев В.В.
                         </div>
-                        <div class="news-text">
+                        <div class="news-card__text">
                             <p>Текст новости 2. Я поспал</p>
                         </div>
                     </article>
 
                     <article class="news-card">
-                        <h3 class="news-title">Новость 3</h3>
-                        <div class="news-meta">
+                        <h3 class="news-card__title">Новость 3</h3>
+                        <div class="news-card__meta">
                             <time datetime="2025-01-01T12:00">01.01.2025 12:00</time> | Сысоев В.В.
                         </div>
-                        <div class="news-text">
+                        <div class="news-card__text">
                             <p>Текст новости 3. Я покушал и поспал</p>
                         </div>
                     </article>
@@ -61,8 +75,20 @@
         </main>
 
         <footer class="footer">
-            <p>Футер</p>
+            <p class="footer__text">© 2024 Все права защищены</p>
         </footer>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
 </body>
 </html>

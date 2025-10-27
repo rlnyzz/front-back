@@ -6,66 +6,97 @@
     <title>Семестровая работа</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
-<body class="main-page">
-    <div class="page-container">
+<body class="page page--main">
+    <div class="theme-switcher">
+        <button class="theme-switcher__button" onclick="toggleTheme()">🌓 Сменить тему</button>
+    </div>
+    
+    <div class="page__container">
         <header class="header">
-            <h1>ХЭДЕР</h1>
+            <h1 class="header__title">Портфолио</h1>
         </header>
         
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item nav__item--active">
+                    <a class="nav__link" href="index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/contacts.html">Контакты</a>
+                </li>
             </ul>
         </nav>
 
         <main class="content">
-            <article class="profile-header">
-                <h1 class="profile-title">Информация об авторе</h1>
-                <img class="profile-photo" src="images/mice.jpg" alt="Фото автора">
-                <h2 class="profile-name">Сысоев Виталий Вячеславович</h2>
-                <p class="profile-group">ЭФБО-08-24</p>
+            <article class="profile">
+                <h1 class="profile__title">Информация об авторе</h1>
+                <img class="profile__photo" src="images/mice.jpg" alt="Фото автора">
+                <h2 class="profile__name">Сысоев Виталий Вячеславович</h2>
+                <p class="profile__group">ЭФБО-08-24</p>
             </article>
 
-            <section class="about-me">
-                <h2>Обо мне</h2>
-                <p>Обо мне: Весь мой рэп, если коротко, про то, что<br>
-                Уж который год который город под подошвой<br>
-                В гору, когда прёт; потом под гору, когда тошно<br>
-                Я не то, чтоб Гулливер, но всё же город под подошвой</p>
-            </section>
-
-            <section class="skills-container">
-                <h2>Мои навыки</h2>
-                <div class="skills-grid">
-                    <div class="skill-tag">Навык 1</div>
-                    <div class="skill-tag">Навык 2</div>
-                    <div class="skill-tag">Навык 3</div>
-                    <div class="skill-tag">Навык 4</div>
+            <section class="about">
+                <h2 class="about__title">Обо мне</h2>
+                <div class="about__content">
+                    <p class="about__text">
+                        Обо мне: Весь мой рэп, если коротко, про то, что<br>
+                        Уж который год который город под подошвой<br>
+                        В гору, когда прёт; потом под гору, когда тошно<br>
+                        Я не то, чтоб Гулливер, но всё же город под подошвой
+                    </p>
                 </div>
             </section>
 
-            <section class="experience-section">
-                <h2 class="section-title">Мой опыт работы</h2>
-                <div class="experience-grid">
+            <section class="skills">
+                <h2 class="skills__title">Мои навыки</h2>
+                <div class="skills__container">
+                    <div class="skill-tag">HTML/CSS</div>
+                    <div class="skill-tag">JavaScript</div>
+                    <div class="skill-tag">Веб-разработка</div>
+                    <div class="skill-tag">UI/UX дизайн</div>
+                </div>
+            </section>
+
+            <section class="experience">
+                <h2 class="experience__title">Мой опыт работы</h2>
+                <div class="experience__grid">
                     <article class="experience-card">
-                        <h3 class="experience-title">Опыт 1</h3>
-                        <p class="experience-desc">Работа лентяем. Лентяйничал.</p>
+                        <h3 class="experience-card__title">Опыт 1</h3>
+                        <p class="experience-card__desc">Работа лентяем. Лентяйничал.</p>
                     </article>
                     <article class="experience-card">
-                        <h3 class="experience-title">Опыт 2</h3>
-                        <p class="experience-desc">Не работал. Лодырейничал.</p>
+                        <h3 class="experience-card__title">Опыт 2</h3>
+                        <p class="experience-card__desc">Не работал. Лодырейничал.</p>
                     </article>
                 </div>
             </section>
         </main>
 
         <footer class="footer">
-            <p>Футер: копирайт сысоев (с)</p>
+            <p class="footer__text">© 2024 Сысоев Виталий. Все права защищены.</p>
         </footer>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+      
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
 </body>
 </html>
