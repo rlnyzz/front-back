@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +8,9 @@
 </head>
 <body class="main-page">
     <div class="page-container">
-        <header class="header">Шапка сайта</header>
+        <header class="header">
+            <h1>X2App</h1>
+        </header>
         
         <nav class="nav">
             <ul class="nav-list">
@@ -19,42 +22,50 @@
             </ul>
         </nav>
 
-        <div class="content">
-            <div class="profile-header">
+        <main class="content">
+            <article class="profile-header">
                 <h1 class="profile-title">Информация об авторе</h1>
                 <img class="profile-photo" src="images/mice.jpg" alt="Фото автора">
                 <h2 class="profile-name">Сысоев Виталий Вячеславович</h2>
                 <p class="profile-group">ЭФБО-08-24</p>
-            </div>
+            </article>
 
-            <div class="about-me">
+            <section class="about-me">
+                <h2>Обо мне</h2>
                 <p>Обо мне: Весь мой рэп, если коротко, про то, что<br>
                 Уж который год который город под подошвой<br>
                 В гору, когда прёт; потом под гору, когда тошно<br>
                 Я не то, чтоб Гулливер, но всё же город под подошвой</p>
-            </div>
+            </section>
 
-            <div class="skills-container">
-                <div class="skill-tag">Навык 1</div>
-                <div class="skill-tag">Навык 2</div>
-                <div class="skill-tag">Навык 3</div>
-                <div class="skill-tag">Навык 4</div>
-            </div>
+            <section class="skills-container">
+                <h2>Мои навыки</h2>
+                <div class="skills-grid">
+                    <div class="skill-tag">Навык 1</div>
+                    <div class="skill-tag">Навык 2</div>
+                    <div class="skill-tag">Навык 3</div>
+                    <div class="skill-tag">Навык 4</div>
+                </div>
+            </section>
 
-            <div class="experience-section">
+            <section class="experience-section">
                 <h2 class="section-title">Мой опыт работы</h2>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 1</h3>
-                    <p class="experience-desc">Работа лентяем. Лентяйничал.</p>
+                <div class="experience-grid">
+                    <article class="experience-card">
+                        <h3 class="experience-title">Опыт 1</h3>
+                        <p class="experience-desc">Работа лентяем. Лентяйничал.</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-title">Опыт 2</h3>
+                        <p class="experience-desc">Не работал. Лодырейничал.</p>
+                    </article>
                 </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 2</h3>
-                    <p class="experience-desc">Не работал. Лодырейничал.</p>
-                </div>
-            </div>
-        </div>
+            </section>
+        </main>
 
-        <footer class="footer">Футер: копирайт сысоев (с)</footer>
+        <footer class="footer">
+            <p>Футер: копирайт сысоев (с)</p>
+        </footer>
     </div>
 </body>
 </html>
