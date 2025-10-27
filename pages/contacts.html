@@ -21,6 +21,20 @@
         width: 90vw;
         max-height: 90vh;
         overflow-y: auto;
+        
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
+    @supports not (transform: translate(-50%, -50%)) {
+        dialog {
+            top: 50%;
+            left: 50%;
+            margin-top: -45vh; 
+            margin-left: -250px; 
+        }
     }
 
     .modal__header {
@@ -125,19 +139,19 @@
     @keyframes slideIn {
         from {
             opacity: 0;
-            transform: translateY(-50px) scale(0.9);
+            transform: translate(-50%, -60%) scale(0.9);
         }
         to {
             opacity: 1;
-            transform: translateY(0) scale(1);
+            transform: translate(-50%, -50%) scale(1);
         }
     }
 
-    /* Адаптивность */
     @media (max-width: 600px) {
         dialog {
-            margin: var(--spacing-sm);
-            width: calc(100vw - 2rem);
+            margin: 0;
+            width: 95vw;
+            max-width: 95vw;
         }
 
         .modal__actions {
@@ -146,6 +160,17 @@
 
         .btn {
             width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        dialog {
+            width: 98vw;
+            max-width: 98vw;
+        }
+        
+        .modal__content {
+            padding: var(--spacing-lg);
         }
     }
     </style>
@@ -242,6 +267,7 @@
                 </div>
 
                 <div class="modal__actions">
+                   
                     <button type="submit" class="btn btn--secondary">Отмена</button>
                     <button type="button" class="btn btn--primary" onclick="submitForm()">Отправить</button>
                 </div>
@@ -260,7 +286,6 @@
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
 
-
         function submitForm() {
             const form = document.getElementById('feedbackForm');
             const formData = new FormData(form);
@@ -278,11 +303,8 @@
                 message: formData.get('message')
             };
 
-
             console.log('Данные формы:', data);
-
             alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
-
 
             contactModal.close();
 
@@ -298,6 +320,13 @@
         document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
             if (event.key === 'Enter' && event.target.type !== 'textarea') {
                 event.preventDefault();
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            const modal = document.getElementById('contactModal');
+            if (modal.open) {
+                modal.style.transform = 'translate(-50%, -50%)';
             }
         });
     </script>
