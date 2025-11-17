@@ -103,203 +103,211 @@
                 </div>
             </section>
 
-            <!-- ДЕМОНСТРАЦИЯ АДАПТИВНЫХ ИЗОБРАЖЕНИЙ -->
-            <section class="tech-section">
-                <h2 class="tech-section__title">Демонстрация адаптивных изображений</h2>
-                
-                <!-- Техника 1: Базовое адаптивное изображение -->
-                <div class="image-demo">
-                    <h3>1. Базовое адаптивное изображение</h3>
-                    <div class="image-container">
-                        <img src="images/mice.jpg" 
-                             alt="Адаптивное изображение мышки"
-                             class="responsive-image"
+ <!-- ЗАМЕНИТЕ секцию с демонстрацией адаптивных изображений в index.html на эту версию -->
+
+<section class="tech-section">
+    <h2 class="tech-section__title">Демонстрация адаптивных изображений</h2>
+    
+    <!-- Техника 1: Базовое адаптивное изображение -->
+    <div class="image-demo">
+        <h3>1. Базовое адаптивное изображение</h3>
+        <div class="image-container">
+            <img src="images/mice.jpg" 
+                 alt="Адаптивное изображение мышки"
+                 class="responsive-image"
+                 loading="lazy">
+        </div>
+        <div class="explanation">
+            <h4>Что происходит:</h4>
+            <ul>
+                <li>Изображение занимает 100% ширины контейнера</li>
+                <li>Высота автоматически рассчитывается для сохранения пропорций</li>
+                <li>Работает на всех устройствах</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Техника 2: Picture element с разными форматами -->
+    <div class="image-demo">
+        <h3>2. Picture element с современными форматами</h3>
+        <div class="image-container">
+            <picture>
+                <!-- WebP для современных браузеров -->
+                <source type="image/webp" srcset="images/mice.webp">
+                <!-- JPEG для старых браузеров -->
+                <source type="image/jpeg" srcset="images/mice.jpg">
+                <!-- Фолбэк -->
+                <img src="images/mice.jpg" 
+                     alt="Мышь в форматах WebP/JPEG"
+                     class="responsive-image"
+                     loading="lazy">
+            </picture>
+        </div>
+        <div class="explanation">
+            <h4>Что происходит:</h4>
+            <ul>
+                <li>Браузер выбирает лучший формат (WebP или JPEG)</li>
+                <li>WebP - современный формат с лучшим сжатием</li>
+                <li>JPEG - фолбэк для старых браузеров</li>
+                <li>Автоматическое переключение между форматами</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Техника 3: Разные изображения для разных экранов -->
+    <div class="image-demo">
+        <h3>3. Разные изображения для разных экранов</h3>
+        <div class="image-container">
+            <picture>
+                <!-- Большое изображение для десктопов -->
+                <source media="(min-width: 1200px)" srcset="images/mice.jpg">
+                <!-- Среднее для планшетов -->
+                <source media="(min-width: 768px)" srcset="images/крыса.png">
+                <!-- Маленькое для мобильных -->
+                <img src="images/котэк.jpg" 
+                     alt="Адаптивное изображение для разных устройств"
+                     class="responsive-image"
+                     loading="lazy">
+            </picture>
+        </div>
+        <div class="explanation">
+            <h4>Что происходит:</h4>
+            <ul>
+                <li><strong>Десктопы:</strong> mice.jpg (1200px+)</li>
+                <li><strong>Планшеты:</strong> крыса.png (768px-1199px)</li>
+                <li><strong>Мобильные:</strong> котэк.jpg (до 767px)</li>
+                <li>Браузер сам выбирает подходящее изображение</li>
+            </ul>
+            <p><em>Примечание: В реальном проекте используйте оптимизированные версии одного изображения</em></p>
+        </div>
+    </div>
+
+    <!-- Техника 4: Retina display поддержка -->
+    <div class="image-demo">
+        <h3>4. Поддержка Retina дисплеев</h3>
+        <div class="image-container" style="text-align: center;">
+            <!-- Создадим простую иконку из существующего изображения -->
+            <img src="images/mice.jpg"
+                 srcset="images/mice.jpg 1x, images/mice.jpg 2x"
+                 alt="Иконка с поддержкой Retina"
+                 class="retina-image"
+                 width="100" height="100"
+                 style="border-radius: 50%; object-fit: cover;">
+        </div>
+        <div class="explanation">
+            <h4>Что происходит:</h4>
+            <ul>
+                <li><strong>Обычные экраны:</strong> стандартное изображение</li>
+                <li><strong>Retina экраны:</strong> то же изображение, но браузер масштабирует его</li>
+                <li>Автоматическое определение плотности пикселей</li>
+            </ul>
+            <p><em>Примечание: В реальном проекте подготовьте @2x версии изображений</em></p>
+        </div>
+    </div>
+
+    <!-- Техника 5: Object-fit свойства -->
+    <div class="image-demo">
+        <h3>5. Свойства object-fit</h3>
+        <div class="object-fit-demo">
+            <div class="object-fit-item">
+                <img src="images/mice.jpg" alt="Cover пример" class="object-fit-cover">
+                <span>object-fit: cover</span>
+            </div>
+            <div class="object-fit-item">
+                <img src="images/mice.jpg" alt="Contain пример" class="object-fit-contain">
+                <span>object-fit: contain</span>
+            </div>
+            <div class="object-fit-item">
+                <img src="images/mice.jpg" alt="Fill пример" class="object-fit-fill">
+                <span>object-fit: fill</span>
+            </div>
+        </div>
+        <div class="explanation">
+            <h4>Что происходит:</h4>
+            <ul>
+                <li><strong>cover</strong> - заполняет контейнер, обрезая края</li>
+                <li><strong>contain</strong> - вписывает полностью, могут быть поля</li>
+                <li><strong>fill</strong> - растягивает, искажая пропорции</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Техника 6: Адаптивная галерея -->
+    <div class="image-demo">
+        <h3>6. Адаптивная галерея</h3>
+        <div class="adaptive-gallery">
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <picture>
+                        <source type="image/webp" srcset="images/mice.webp">
+                        <img class="gallery-image" 
+                             src="images/mice.jpg" 
+                             alt="Галерея 1 - Проект 1"
                              loading="lazy">
-                    </div>
-                    <div class="explanation">
-                        <h4>Что происходит:</h4>
-                        <ul>
-                            <li>Изображение занимает 100% ширины контейнера</li>
-                            <li>Высота автоматически рассчитывается для сохранения пропорций</li>
-                            <li>Работает на всех устройствах</li>
-                        </ul>
-                    </div>
+                    </picture>
                 </div>
-
-                <!-- Техника 2: Picture element с разными форматами -->
-                <div class="image-demo">
-                    <h3>2. Picture element с современными форматами</h3>
-                    <div class="image-container">
-                        <picture>
-                            <source type="image/avif" srcset="images/mice.avif">
-                            <source type="image/webp" srcset="images/mice.webp">
-                            <img src="images/mice.jpg" 
-                                 alt="Мышь в форматах AVIF/WebP/JPEG"
-                                 class="responsive-image"
-                                 loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="explanation">
-                        <h4>Что происходит:</h4>
-                        <ul>
-                            <li>Браузер выбирает оптимальный формат (AVIF → WebP → JPEG)</li>
-                            <li>AVIF - современный формат с лучшим сжатием</li>
-                            <li>WebP - поддерживается большинством браузеров</li>
-                            <li>JPEG - фолбэк для старых браузеров</li>
-                        </ul>
-                    </div>
+                <div class="gallery-caption">
+                    <h4>Проект 1</h4>
+                    <p>Веб-разработка</p>
                 </div>
-
-                <!-- Техника 3: Разные изображения для разных экранов -->
-                <div class="image-demo">
-                    <h3>3. Разные изображения для разных экранов</h3>
-                    <div class="image-container">
-                        <picture>
-                            <!-- Большое изображение для десктопов -->
-                            <source media="(min-width: 1200px)" srcset="images/wide-desktop.jpg">
-                            <!-- Среднее для планшетов -->
-                            <source media="(min-width: 768px)" srcset="images/tablet.jpg">
-                            <!-- Маленькое для мобильных -->
-                            <img src="images/mobile.jpg" 
-                                 alt="Адаптивное изображение для разных устройств"
-                                 class="responsive-image"
-                                 loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="explanation">
-                        <h4>Что происходит:</h4>
-                        <ul>
-                            <li><strong>Десктопы:</strong> wide-desktop.jpg (1200px+)</li>
-                            <li><strong>Планшеты:</strong> tablet.jpg (768px-1199px)</li>
-                            <li><strong>Мобильные:</strong> mobile.jpg (до 767px)</li>
-                            <li>Браузер сам выбирает подходящее изображение</li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <picture>
+                        <source type="image/webp" srcset="images/крыса.webp">
+                        <img class="gallery-image" 
+                             src="images/крыса.png" 
+                             alt="Галерея 2 - Проект 2"
+                             loading="lazy">
+                    </picture>
                 </div>
-
-                <!-- Техника 4: Retina display поддержка -->
-                <div class="image-demo">
-                    <h3>4. Поддержка Retina дисплеев</h3>
-                    <div class="image-container" style="text-align: center;">
-                        <img src="images/icon-1x.png"
-                             srcset="images/icon-1x.png 1x, images/icon-2x.png 2x"
-                             alt="Иконка с поддержкой Retina"
-                             class="retina-image"
-                             width="100" height="100">
-                    </div>
-                    <div class="explanation">
-                        <h4>Что происходит:</h4>
-                        <ul>
-                            <li><strong>Обычные экраны:</strong> icon-1x.png</li>
-                            <li><strong>Retina экраны:</strong> icon-2x.png (в 2 раза четче)</li>
-                            <li>Автоматическое определение плотности пикселей</li>
-                        </ul>
-                    </div>
+                <div class="gallery-caption">
+                    <h4>Проект 2</h4>
+                    <p>UI/UX дизайн</p>
                 </div>
-
-                <!-- Техника 5: Object-fit свойства -->
-                <div class="image-demo">
-                    <h3>5. Свойства object-fit</h3>
-                    <div class="object-fit-demo">
-                        <div class="object-fit-item">
-                            <img src="images/mice.jpg" alt="Cover пример" class="object-fit-cover">
-                            <span>object-fit: cover</span>
-                        </div>
-                        <div class="object-fit-item">
-                            <img src="images/mice.jpg" alt="Contain пример" class="object-fit-contain">
-                            <span>object-fit: contain</span>
-                        </div>
-                        <div class="object-fit-item">
-                            <img src="images/mice.jpg" alt="Fill пример" class="object-fit-fill">
-                            <span>object-fit: fill</span>
-                        </div>
-                    </div>
-                    <div class="explanation">
-                        <h4>Что происходит:</h4>
-                        <ul>
-                            <li><strong>cover</strong> - заполняет контейнер, обрезая края</li>
-                            <li><strong>contain</strong> - вписывает полностью, могут быть поля</li>
-                            <li><strong>fill</strong> - растягивает, искажая пропорции</li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <picture>
+                        <source type="image/webp" srcset="images/котэк.webp">
+                        <img class="gallery-image" 
+                             src="images/котэк.jpg" 
+                             alt="Галерея 3 - Проект 3"
+                             loading="lazy">
+                    </picture>
                 </div>
-
-                <!-- Техника 6: Адаптивная галерея -->
-                <div class="image-demo">
-                    <h3>6. Адаптивная галерея</h3>
-                    <div class="adaptive-gallery">
-                        <div class="gallery-item">
-                            <div class="gallery-image-container">
-                                <picture>
-                                    <source type="image/webp" srcset="images/gallery1.webp">
-                                    <img class="gallery-image" 
-                                         src="images/gallery1.jpg" 
-                                         alt="Галерея 1 - Проект 1"
-                                         loading="lazy">
-                                </picture>
-                            </div>
-                            <div class="gallery-caption">
-                                <h4>Проект 1</h4>
-                                <p>Веб-разработка</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-image-container">
-                                <picture>
-                                    <source type="image/webp" srcset="images/gallery2.webp">
-                                    <img class="gallery-image" 
-                                         src="images/gallery2.jpg" 
-                                         alt="Галерея 2 - Проект 2"
-                                         loading="lazy">
-                                </picture>
-                            </div>
-                            <div class="gallery-caption">
-                                <h4>Проект 2</h4>
-                                <p>UI/UX дизайн</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-image-container">
-                                <picture>
-                                    <source type="image/webp" srcset="images/gallery3.webp">
-                                    <img class="gallery-image" 
-                                         src="images/gallery3.jpg" 
-                                         alt="Галерея 3 - Проект 3"
-                                         loading="lazy">
-                                </picture>
-                            </div>
-                            <div class="gallery-caption">
-                                <h4>Проект 3</h4>
-                                <p>Мобильная разработка</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-image-container">
-                                <picture>
-                                    <source type="image/webp" srcset="images/gallery4.webp">
-                                    <img class="gallery-image" 
-                                         src="images/gallery4.jpg" 
-                                         alt="Галерея 4 - Проект 4"
-                                         loading="lazy">
-                                </picture>
-                            </div>
-                            <div class="gallery-caption">
-                                <h4>Проект 4</h4>
-                                <p>Адаптивный дизайн</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="explanation">
-                        <h4>Что происходит:</h4>
-                        <ul>
-                            <li><strong>На десктопах:</strong> 4 изображения в ряд</li>
-                            <li><strong>На планшетах:</strong> 2 изображения в ряд</li>
-                            <li><strong>На мобильных:</strong> 1 изображение в ряд</li>
-                            <li>Автоматическое перестроение сетки</li>
-                        </ul>
-                    </div>
+                <div class="gallery-caption">
+                    <h4>Проект 3</h4>
+                    <p>Мобильная разработка</p>
                 </div>
-            </section>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <picture>
+                        <source type="image/webp" srcset="images/гусяра.webp">
+                        <img class="gallery-image" 
+                             src="images/гусяра.jpg" 
+                             alt="Галерея 4 - Проект 4"
+                             loading="lazy">
+                    </picture>
+                </div>
+                <div class="gallery-caption">
+                    <h4>Проект 4</h4>
+                    <p>Адаптивный дизайн</p>
+                </div>
+            </div>
+        </div>
+        <div class="explanation">
+            <h4>Что происходит:</h4>
+            <ul>
+                <li><strong>На десктопах:</strong> 4 изображения в ряд</li>
+                <li><strong>На планшетах:</strong> 2 изображения в ряд</li>
+                <li><strong>На мобильных:</strong> 1 изображение в ряд</li>
+                <li>Автоматическое перестроение сетки</li>
+            </ul>
+        </div>
+    </div>
+</section>
         </main>
 
         <footer class="footer">
