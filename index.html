@@ -2,21 +2,23 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Семестровая работа</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Главная - Портфолио Сысоева Виталия</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
-<body class="page page--main">
+<body class="page">
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    
     <div class="theme-switcher">
         <button class="theme-switcher__button" onclick="toggleTheme()">🌓 Сменить тему</button>
     </div>
     
     <div class="page__container">
         <header class="header">
-            <h1 class="header__title">Портфолио</h1>
+            <h1 class="header__title">Портфолио Сысоева Виталия</h1>
         </header>
         
-        <nav class="nav">
+        <nav class="nav" aria-label="Основная навигация">
             <ul class="nav__list">
                 <li class="nav__item nav__item--active">
                     <a class="nav__link" href="index.html">Главная</a>
@@ -36,16 +38,29 @@
             </ul>
         </nav>
 
-        <main class="content">
+        <main id="main" class="content">
             <article class="profile">
-                <h1 class="profile__title">Информация об авторе</h1>
-                <img class="profile__photo" src="images/mice.jpg" alt="Фото автора">
-                <h2 class="profile__name">Сысоев Виталий Вячеславович</h2>
-                <p class="profile__group">ЭФБО-08-24</p>
+                <div class="profile__header">
+                    <picture>
+                        <source type="image/avif" srcset="images/mice.avif">
+                        <source type="image/webp" srcset="images/mice.webp">
+                        <img class="profile__photo"
+                            src="images/mice.jpg"
+                            alt="Фото автора - Сысоев Виталий"
+                            width="200" height="250"
+                            loading="eager"
+                            decoding="async">
+                    </picture>
+                    <div class="profile__info">
+                        <h1 class="profile__title">Информация об авторе</h1>
+                        <h2 class="profile__name">Сысоев Виталий Вячеславович</h2>
+                        <p class="profile__group">ЭФБО-08-24</p>
+                    </div>
+                </div>
             </article>
 
-            <section class="about">
-                <h2 class="about__title">Обо мне</h2>
+            <section class="about section">
+                <h2 class="section__title">Обо мне</h2>
                 <div class="about__content">
                     <p class="about__text">
                         Обо мне: Весь мой рэп, если коротко, про то, что<br>
@@ -56,33 +71,41 @@
                 </div>
             </section>
 
-            <section class="skills">
-                <h2 class="skills__title">Мои навыки</h2>
+            <section class="skills section">
+                <h2 class="section__title">Мои навыки</h2>
                 <div class="skills__container">
-                    <div class="skill-tag">HTML/CSS</div>
-                    <div class="skill-tag">JavaScript</div>
-                    <div class="skill-tag">Веб-разработка</div>
-                    <div class="skill-tag">UI/UX дизайн</div>
+                    <div class="skills__grid">
+                        <div class="skill-tag" tabindex="0">HTML/CSS</div>
+                        <div class="skill-tag" tabindex="0">JavaScript</div>
+                        <div class="skill-tag" tabindex="0">Веб-разработка</div>
+                        <div class="skill-tag" tabindex="0">UI/UX дизайн</div>
+                        <div class="skill-tag" tabindex="0">Адаптивная верстка</div>
+                        <div class="skill-tag" tabindex="0">Bootstrap</div>
+                    </div>
                 </div>
             </section>
 
-            <section class="experience">
-                <h2 class="experience__title">Мой опыт работы</h2>
+            <section class="experience section">
+                <h2 class="section__title">Мой опыт работы</h2>
                 <div class="experience__grid">
                     <article class="experience-card">
                         <h3 class="experience-card__title">Опыт 1</h3>
-                        <p class="experience-card__desc">Работа лентяем. Лентяйничал.</p>
+                        <p class="experience-card__desc">Работа лентяем. Лентяйничал. Изучал современные технологии веб-разработки и практиковался в создании адаптивных интерфейсов.</p>
                     </article>
                     <article class="experience-card">
                         <h3 class="experience-card__title">Опыт 2</h3>
-                        <p class="experience-card__desc">Не работал. Лодырейничал.</p>
+                        <p class="experience-card__desc">Не работал. Лодырейничал. Разрабатывал пет-проекты, изучал фреймворки и методологии разработки.</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-card__title">Опыт 3</h3>
+                        <p class="experience-card__desc">Стажировка в веб-студии. Участвовал в создании клиентских проектов, работал в команде, изучал процессы разработки.</p>
                     </article>
                 </div>
             </section>
         </main>
 
         <footer class="footer">
-            <p class="footer__text">© 2025 Сысоев Виталий. Все права защищены.</p>
+            <p class="footer__text">© 2024 Сысоев Виталий. Все права защищены.</p>
         </footer>
     </div>
 
@@ -94,9 +117,13 @@
             localStorage.setItem('theme', newTheme);
         }
 
-        // Загрузка темы из localStorage
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Tab') {
+                document.querySelector('.skip-link').style.insetBlockStart = '1rem';
+            }
+        });
     </script>
 </body>
 </html>

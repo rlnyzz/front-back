@@ -2,21 +2,117 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Товары</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Товары - Магазин зверушек</title>
     <link rel="stylesheet" href="../style/style.css">
+    <style>
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: var(--space-lg);
+            container-type: inline-size;
+        }
+
+        @container (min-width: 600px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @container (min-width: 900px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .product-card {
+            background: var(--color-surface);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            position: relative;
+            min-width: 0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-card--discount::before {
+            content: "СКИДКА";
+            position: absolute;
+            top: var(--space-sm);
+            right: var(--space-sm);
+            background: var(--color-error);
+            color: var(--color-surface);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--border-radius);
+            font-size: var(--font-size-xs);
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .product-card__image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform var(--transition-normal);
+        }
+
+        .product-card:hover .product-card__image {
+            transform: scale(1.05);
+        }
+
+        .product-card__content {
+            padding: var(--space-md);
+        }
+
+        .product-card__name {
+            font-size: var(--font-size-lg);
+            color: var(--color-text);
+            margin-bottom: var(--space-xs);
+            overflow-wrap: anywhere;
+        }
+
+        .product-card__price {
+            font-size: var(--font-size-xl);
+            color: var(--color-success);
+            font-weight: bold;
+        }
+
+        .product-card__price--old {
+            text-decoration: line-through;
+            color: var(--color-text-light);
+            font-size: var(--font-size-base);
+            margin-left: var(--space-xs);
+        }
+
+        .buy-button {
+            width: 100%;
+            margin-top: var(--space-sm);
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+        }
+    </style>
 </head>
 <body class="page page--goods">
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    
     <div class="theme-switcher">
         <button class="theme-switcher__button" onclick="toggleTheme()">🌓 Сменить тему</button>
     </div>
     
     <div class="page__container">
         <header class="header">
-            <h1 class="header__title">Наши товары</h1>
+            <h1 class="header__title">Магазин зверушек</h1>
         </header>
         
-        <nav class="nav">
+        <nav class="nav" aria-label="Основная навигация">
             <ul class="nav__list">
                 <li class="nav__item">
                     <a class="nav__link" href="../index.html">Главная</a>
@@ -36,35 +132,41 @@
             </ul>
         </nav>
 
-        <main class="content">
-            <section class="products">
+        <main id="main" class="content">
+            <section class="products section">
                 <h2 class="section__title">Наши товары</h2>
                 
-                <div class="products__grid">
+                <div class="products-grid">
                     <article class="product-card">
-                        <img class="product-card__image" src="../images/крыса.png" alt="Зверушка 1">
+                        <img class="product-card__image" src="../images/крыса.png" alt="Зверушка 1" width="280" height="200" loading="lazy">
                         <div class="product-card__content">
                             <h3 class="product-card__name">Зверушка 1</h3>
-                            <p class="product-card__price">1000 руб.</p>
+                            <p class="product-card__desc">Прекрасный компаньон для дома и семьи</p>
+                            <div class="product-card__price">1000 руб.</div>
+                            <button class="buy-button skill-tag">Добавить в корзину</button>
                         </div>
                     </article>
 
                     <article class="product-card product-card--discount">
-                        <img class="product-card__image" src="../images/котэк.jpg" alt="Зверушка 2">
+                        <img class="product-card__image" src="../images/котэк.jpg" alt="Зверушка 2" width="280" height="200" loading="lazy">
                         <div class="product-card__content">
                             <h3 class="product-card__name">Зверушка 2</h3>
-                            <p class="product-card__price">
-                                1200 руб.
+                            <p class="product-card__desc">Игривый и ласковый друг</p>
+                            <div>
+                                <span class="product-card__price">1200 руб.</span>
                                 <span class="product-card__price--old">1500 руб.</span>
-                            </p>
+                            </div>
+                            <button class="buy-button skill-tag">Добавить в корзину</button>
                         </div>
                     </article>
 
                     <article class="product-card">
-                        <img class="product-card__image" src="../images/гусяра.jpg" alt="Зверушка 3">
+                        <img class="product-card__image" src="../images/гусяра.jpg" alt="Зверушка 3" width="280" height="200" loading="lazy">
                         <div class="product-card__content">
                             <h3 class="product-card__name">Зверушка 3</h3>
-                            <p class="product-card__price">1200 руб.</p>
+                            <p class="product-card__desc">Верный страж и хороший друг</p>
+                            <div class="product-card__price">1200 руб.</div>
+                            <button class="buy-button skill-tag">Добавить в корзину</button>
                         </div>
                     </article>
                 </div>
@@ -72,7 +174,7 @@
         </main>
 
         <footer class="footer">
-            <p class="footer__text">© 2025 Магазин зверушек</p>
+            <p class="footer__text">© 2024 Магазин зверушек. Все права защищены.</p>
         </footer>
     </div>
 
@@ -86,6 +188,19 @@
 
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Tab') {
+                document.querySelector('.skip-link').style.insetBlockStart = '1rem';
+            }
+        });
+
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.closest('.product-card').querySelector('.product-card__name').textContent;
+                alert(`Товар "${productName}" добавлен в корзину!`);
+            });
+        });
     </script>
 </body>
 </html>
