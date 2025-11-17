@@ -38,38 +38,141 @@
 
         <main class="content">
             <section class="news">
-                <h2 class="section__title">Новости компании</h2>
+                <h2 class="section__title">Последние новости</h2>
                 
                 <div class="news__container">
                     <article class="news-card">
-                        <h3 class="news-card__title">Шокирующая новость 1</h3>
+                        <div class="gallery-image-container">
+                            <picture>
+                                <source media="(min-width: 1200px)" srcset="../images/wide-desktop.jpg">
+                                <source media="(min-width: 768px)" srcset="../images/tablet.jpg">
+                                <img src="../images/mobile.jpg" 
+                                     alt="Новость 1 - Технологии адаптивных изображений"
+                                     class="responsive-image"
+                                     loading="lazy">
+                            </picture>
+                        </div>
+                        <h3 class="news-card__title">Внедрение современных технологий адаптивных изображений</h3>
                         <div class="news-card__meta">
-                            <time datetime="2025-06-09T12:00">09.06.2025 12:00</time> | Сысоев В.В.
+                            <time datetime="2025-06-15T10:00">15.06.2025 10:00</time> | Сысоев В.В.
                         </div>
                         <div class="news-card__text">
-                            <p>Текст новости 1. Я хорошо покушал</p>
+                            <p>Наш сайт теперь использует передовые технологии адаптивных изображений. Благодаря элементам &lt;picture&gt; и современным форматам WebP/AVIF, мы обеспечиваем быструю загрузку и оптимальное качество изображений на всех устройствах.</p>
                         </div>
                     </article>
 
                     <article class="news-card">
-                        <h3 class="news-card__title">Новость 2</h3>
+                        <div class="gallery-image-container">
+                            <img src="../images/mice.jpg"
+                                 srcset="../images/mice.jpg 1x, ../images/mice-2x.jpg 2x"
+                                 alt="Новость 2 - Поддержка Retina дисплеев"
+                                 class="responsive-image"
+                                 loading="lazy">
+                        </div>
+                        <h3 class="news-card__title">Поддержка Retina дисплеев и высокопиксельных экранов</h3>
                         <div class="news-card__meta">
-                            <time datetime="2025-06-10T12:00">10.06.2025 12:00</time> | Сысоев В.В.
+                            <time datetime="2025-06-14T14:30">14.06.2025 14:30</time> | Сысоев В.В.
                         </div>
                         <div class="news-card__text">
-                            <p>Текст новости 2. Я поспал</p>
+                            <p>Мы внедрили поддержку Retina дисплеев с использованием атрибута srcset. Теперь пользователи с устройствами Apple и другими высокопиксельными экранами видят изображения в максимальном качестве.</p>
                         </div>
                     </article>
 
                     <article class="news-card">
-                        <h3 class="news-card__title">Новость 3</h3>
+                        <div class="gallery-image-container">
+                            <picture>
+                                <source type="image/avif" srcset="../images/gallery1.avif">
+                                <source type="image/webp" srcset="../images/gallery1.webp">
+                                <img src="../images/gallery1.jpg"
+                                     alt="Новость 3 - Обновление галереи проектов"
+                                     class="responsive-image"
+                                     loading="lazy">
+                            </picture>
+                        </div>
+                        <h3 class="news-card__title">Обновление галереи проектов с адаптивной сеткой</h3>
                         <div class="news-card__meta">
                             <time datetime="2025-01-01T12:00">01.01.2025 12:00</time> | Сысоев В.В.
                         </div>
                         <div class="news-card__text">
-                            <p>Текст новости 3. Я покушал и поспал</p>
+                            <p>Наша галерея проектов теперь использует CSS Grid с контейнерными запросами для идеального отображения на всех устройствах - от мобильных телефонов до широкоформатных мониторов.</p>
                         </div>
                     </article>
+                </div>
+            </section>
+
+            <!-- Демонстрация адаптивных изображений в новостях -->
+            <section class="tech-section">
+                <h2 class="section__title">Адаптивные изображения в новостях</h2>
+                
+                <div class="adaptive-gallery">
+                    <article class="news-card">
+                        <div class="gallery-image-container">
+                            <picture>
+                                <source type="image/webp" srcset="../images/gallery2.webp">
+                                <img class="gallery-image object-fit-cover" 
+                                     src="../images/gallery2.jpg" 
+                                     alt="Новость 4 - CSS Grid технологии"
+                                     loading="lazy">
+                            </picture>
+                        </div>
+                        <h3 class="news-card__title">Использование CSS Grid для адаптивных макетов</h3>
+                        <div class="news-card__meta">
+                            <time datetime="2025-06-13T09:15">13.06.2025 09:15</time> | Сысоев В.В.
+                        </div>
+                        <div class="news-card__text">
+                            <p>CSS Grid Layout позволяет создавать сложные адаптивные макеты без использования фреймворков. Мы активно используем эту технологию для наших проектов.</p>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="gallery-image-container">
+                            <picture>
+                                <source type="image/webp" srcset="../images/gallery3.webp">
+                                <img class="gallery-image object-fit-contain" 
+                                     src="../images/gallery3.jpg" 
+                                     alt="Новость 5 - Производительность веб-сайтов"
+                                     loading="lazy"
+                                     style="background: var(--color-background);">
+                            </picture>
+                        </div>
+                        <h3 class="news-card__title">Оптимизация производительности с помощью lazy loading</h3>
+                        <div class="news-card__meta">
+                            <time datetime="2025-06-12T16:45">12.06.2025 16:45</time> | Сысоев В.В.
+                        </div>
+                        <div class="news-card__text">
+                            <p>Внедрение атрибута loading="lazy" для изображений значительно улучшило производительность наших страниц, особенно на мобильных устройствах.</p>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="gallery-image-container">
+                            <picture>
+                                <source type="image/webp" srcset="../images/gallery4.webp">
+                                <img class="gallery-image" 
+                                     src="../images/gallery4.jpg" 
+                                     alt="Новость 6 - Доступность веб-сайтов"
+                                     loading="lazy">
+                            </picture>
+                        </div>
+                        <h3 class="news-card__title">Улучшение доступности с семантическими тегами</h3>
+                        <div class="news-card__meta">
+                            <time datetime="2025-06-11T11:20">11.06.2025 11:20</time> | Сысоев В.В.
+                        </div>
+                        <div class="news-card__text">
+                            <p>Использование семантических HTML-тегов и правильных alt-атрибутов делает наш сайт более доступным для пользователей с ограниченными возможностями.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="explanation">
+                    <h3>Преимущества адаптивных изображений в новостях:</h3>
+                    <ul>
+                        <li><strong>Быстрая загрузка</strong> - оптимизированные форматы и размеры</li>
+                        <li><strong>Адаптивность</strong> - идеальное отображение на всех устройствах</li>
+                        <li><strong>Экономия трафика</strong> - загрузка только нужных версий изображений</li>
+                        <li><strong>Высокое качество</strong> - поддержка Retina и современных форматов</li>
+                        <li><strong>Улучшенный UX</strong> - плавное масштабирование и lazy loading</li>
+                    </ul>
                 </div>
             </section>
         </main>

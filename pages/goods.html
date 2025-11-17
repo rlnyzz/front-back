@@ -5,100 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Товары - Магазин зверушек</title>
     <link rel="stylesheet" href="../style/style.css">
-    <style>
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-            gap: var(--space-lg);
-            container-type: inline-size;
-        }
-
-        @container (min-width: 600px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @container (min-width: 900px) {
-            .products-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .product-card {
-            background: var(--color-surface);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-md);
-            overflow: hidden;
-            transition: all var(--transition-normal);
-            position: relative;
-            min-width: 0;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .product-card--discount::before {
-            content: "СКИДКА";
-            position: absolute;
-            top: var(--space-sm);
-            right: var(--space-sm);
-            background: var(--color-error);
-            color: var(--color-surface);
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: var(--border-radius);
-            font-size: var(--font-size-xs);
-            font-weight: bold;
-            z-index: 2;
-        }
-
-        .product-card__image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform var(--transition-normal);
-        }
-
-        .product-card:hover .product-card__image {
-            transform: scale(1.05);
-        }
-
-        .product-card__content {
-            padding: var(--space-md);
-        }
-
-        .product-card__name {
-            font-size: var(--font-size-lg);
-            color: var(--color-text);
-            margin-bottom: var(--space-xs);
-            overflow-wrap: anywhere;
-        }
-
-        .product-card__price {
-            font-size: var(--font-size-xl);
-            color: var(--color-success);
-            font-weight: bold;
-        }
-
-        .product-card__price--old {
-            text-decoration: line-through;
-            color: var(--color-text-light);
-            font-size: var(--font-size-base);
-            margin-left: var(--space-xs);
-        }
-
-        .buy-button {
-            width: 100%;
-            margin-top: var(--space-sm);
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-xs);
-        }
-    </style>
 </head>
 <body class="page page--goods">
     <a class="skip-link" href="#main">Перейти к основному содержимому</a>
@@ -136,22 +42,41 @@
             <section class="products section">
                 <h2 class="section__title">Наши товары</h2>
                 
-                <div class="products-grid">
-                    <article class="product-card">
-                        <img class="product-card__image" src="../images/крыса.png" alt="Зверушка 1" width="280" height="200" loading="lazy">
-                        <div class="product-card__content">
-                            <h3 class="product-card__name">Зверушка 1</h3>
-                            <p class="product-card__desc">Прекрасный компаньон для дома и семьи</p>
+                <!-- Адаптивная галерея товаров с современными техниками -->
+                <div class="adaptive-gallery">
+                    <article class="gallery-item">
+                        <div class="gallery-image-container">
+                            <picture>
+                                <source type="image/webp" srcset="../images/крыса.webp">
+                                <img class="gallery-image" 
+                                     src="../images/крыса.png" 
+                                     alt="Зверушка 1 - Крыса"
+                                     loading="lazy"
+                                     width="280" height="200">
+                            </picture>
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 class="product-card__name">Зверушка 1 - Крыса</h3>
+                            <p class="product-card__desc">Прекрасный компаньон для дома и семьи. Умная и чистоплотная.</p>
                             <div class="product-card__price">1000 руб.</div>
                             <button class="buy-button skill-tag">Добавить в корзину</button>
                         </div>
                     </article>
 
-                    <article class="product-card product-card--discount">
-                        <img class="product-card__image" src="../images/котэк.jpg" alt="Зверушка 2" width="280" height="200" loading="lazy">
-                        <div class="product-card__content">
-                            <h3 class="product-card__name">Зверушка 2</h3>
-                            <p class="product-card__desc">Игривый и ласковый друг</p>
+                    <article class="gallery-item">
+                        <div class="gallery-image-container">
+                            <picture>
+                                <source type="image/webp" srcset="../images/котэк.webp">
+                                <img class="gallery-image" 
+                                     src="../images/котэк.jpg" 
+                                     alt="Зверушка 2 - Кот"
+                                     loading="lazy"
+                                     width="280" height="200">
+                            </picture>
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 class="product-card__name">Зверушка 2 - Кот</h3>
+                            <p class="product-card__desc">Игривый и ласковый друг для всей семьи.</p>
                             <div>
                                 <span class="product-card__price">1200 руб.</span>
                                 <span class="product-card__price--old">1500 руб.</span>
@@ -160,15 +85,104 @@
                         </div>
                     </article>
 
-                    <article class="product-card">
-                        <img class="product-card__image" src="../images/гусяра.jpg" alt="Зверушка 3" width="280" height="200" loading="lazy">
-                        <div class="product-card__content">
-                            <h3 class="product-card__name">Зверушка 3</h3>
-                            <p class="product-card__desc">Верный страж и хороший друг</p>
+                    <article class="gallery-item">
+                        <div class="gallery-image-container">
+                            <picture>
+                                <source type="image/webp" srcset="../images/гусяра.webp">
+                                <img class="gallery-image" 
+                                     src="../images/гусяра.jpg" 
+                                     alt="Зверушка 3 - Гусь"
+                                     loading="lazy"
+                                     width="280" height="200">
+                            </picture>
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 class="product-card__name">Зверушка 3 - Гусь</h3>
+                            <p class="product-card__desc">Верный страж и хороший друг. Отличный охранник.</p>
                             <div class="product-card__price">1200 руб.</div>
                             <button class="buy-button skill-tag">Добавить в корзину</button>
                         </div>
                     </article>
+
+                    <article class="gallery-item">
+                        <div class="gallery-image-container">
+                            <picture>
+                                <source media="(min-width: 1200px)" srcset="../images/wide-desktop.jpg">
+                                <source media="(min-width: 768px)" srcset="../images/tablet.jpg">
+                                <img class="gallery-image" 
+                                     src="../images/mobile.jpg" 
+                                     alt="Зверушка 4 - Хомяк"
+                                     loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 class="product-card__name">Зверушка 4 - Хомяк</h3>
+                            <p class="product-card__desc">Маленький и энергичный питомец.</p>
+                            <div class="product-card__price">800 руб.</div>
+                            <button class="buy-button skill-tag">Добавить в корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item">
+                        <div class="gallery-image-container">
+                            <img class="gallery-image object-fit-cover" 
+                                 src="../images/крыса.png" 
+                                 alt="Зверушка 5 - Декоративная крыса"
+                                 loading="lazy">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 class="product-card__name">Зверушка 5 - Декоративная крыса</h3>
+                            <p class="product-card__desc">Экзотический красавец с уникальным окрасом.</p>
+                            <div class="product-card__price">2000 руб.</div>
+                            <button class="buy-button skill-tag">Добавить в корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item">
+                        <div class="gallery-image-container">
+                            <picture>
+                                <source type="image/avif" srcset="../images/гусяра.avif">
+                                <source type="image/webp" srcset="../images/гусяра.webp">
+                                <img class="gallery-image" 
+                                     src="../images/гусяра.jpg" 
+                                     alt="Зверушка 6 - Белый гусь"
+                                     loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 class="product-card__name">Зверушка 6 - Белый гусь</h3>
+                            <p class="product-card__desc">Добрый и пушистый компаньон.</p>
+                            <div class="product-card__price">1500 руб.</div>
+                            <button class="buy-button skill-tag">Добавить в корзину</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Демонстрация техник адаптивных изображений -->
+            <section class="tech-section">
+                <h2 class="section__title">Технологии адаптивных изображений в нашем магазине</h2>
+                
+                <div class="explanation">
+                    <h3>Используемые технологии:</h3>
+                    <ul>
+                        <li><strong>Адаптивная сетка</strong> - автоматическое перестроение товаров</li>
+                        <li><strong>Современные форматы</strong> - WebP и AVIF для быстрой загрузки</li>
+                        <li><strong>Lazy Loading</strong> - отложенная загрузка изображений</li>
+                        <li><strong>Retina поддержка</strong> - четкие изображения на всех экранах</li>
+                        <li><strong>Object-fit</strong> - правильное отображение изображений в контейнерах</li>
+                    </ul>
+                </div>
+
+                <div class="object-fit-demo">
+                    <div class="object-fit-item">
+                        <img src="../images/крыса.png" alt="Cover пример" class="object-fit-cover">
+                        <span>Cover - для карточек товаров</span>
+                    </div>
+                    <div class="object-fit-item">
+                        <img src="../images/крыса.png" alt="Contain пример" class="object-fit-contain">
+                        <span>Contain - для детальных просмотров</span>
+                    </div>
                 </div>
             </section>
         </main>
@@ -197,7 +211,7 @@
 
         document.querySelectorAll('.buy-button').forEach(button => {
             button.addEventListener('click', function() {
-                const productName = this.closest('.product-card').querySelector('.product-card__name').textContent;
+                const productName = this.closest('.gallery-item').querySelector('.product-card__name').textContent;
                 alert(`Товар "${productName}" добавлен в корзину!`);
             });
         });

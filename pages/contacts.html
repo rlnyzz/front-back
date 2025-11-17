@@ -173,6 +173,33 @@
             padding: var(--spacing-lg);
         }
     }
+
+    /* Градиент для заголовка модального окна */
+    :root {
+        --gradient-header-contacts: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    }
+
+    [data-theme="dark"] {
+        --gradient-header-contacts: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    }
+
+    .contact-button {
+        background: var(--color-primary);
+        color: var(--color-surface);
+        border: none;
+        padding: var(--space-md) var(--space-lg);
+        border-radius: var(--border-radius);
+        font-size: var(--font-size-base);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--transition-normal);
+        margin-top: var(--space-md);
+    }
+
+    .contact-button:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
     </style>
 </head>
 <body class="page page--contacts">
@@ -217,6 +244,97 @@
                         <p class="contacts__item"><strong>Время работы:</strong> Пн-Пт: 9:00-18:00</p>
                     </div>
                     <button class="contact-button" onclick="contactModal.showModal()">Связаться с нами</button>
+                </div>
+            </section>
+
+            <!-- Демонстрация адаптивных изображений в контактах -->
+            <section class="tech-section">
+                <h2 class="section__title">Наша команда</h2>
+                
+                <div class="adaptive-gallery">
+                    <div class="gallery-item">
+                        <div class="gallery-image-container">
+                            <picture>
+                                <source type="image/avif" srcset="../images/team1.avif">
+                                <source type="image/webp" srcset="../images/team1.webp">
+                                <img class="gallery-image" 
+                                     src="../images/team1.jpg" 
+                                     alt="Сысоев Виталий - Разработчик"
+                                     loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="gallery-caption">
+                            <h3>Сысоев Виталий</h3>
+                            <p><strong>Фуллстек-разработчик</strong></p>
+                            <p>ЭФБО-08-24</p>
+                            <p>Специализация: адаптивная вёрстка, современные технологии изображений</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image-container">
+                            <img class="gallery-image object-fit-cover" 
+                                 src="../images/mice.jpg" 
+                                 alt="Наш офис"
+                                 loading="lazy">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3>Наш офис</h3>
+                            <p><strong>г. Москва</strong></p>
+                            <p>ул. Пушкина, д. Колотушкина</p>
+                            <p>Современное пространство для разработки</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image-container">
+                            <picture>
+                                <source media="(min-width: 1200px)" srcset="../images/wide-desktop.jpg">
+                                <source media="(min-width: 768px)" srcset="../images/tablet.jpg">
+                                <img class="gallery-image" 
+                                     src="../images/mobile.jpg" 
+                                     alt="Рабочее пространство"
+                                     loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="gallery-caption">
+                            <h3>Рабочее пространство</h3>
+                            <p><strong>Комфортная среда</strong></p>
+                            <p>Современное оборудование</p>
+                            <p>Оптимальные условия для творчества</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="explanation">
+                    <h3>Технологии, которые мы используем:</h3>
+                    <ul>
+                        <li><strong>Адаптивные изображения</strong> - оптимальное качество на всех устройствах</li>
+                        <li><strong>Современные форматы</strong> - WebP и AVIF для быстрой загрузки</li>
+                        <li><strong>Retina поддержка</strong> - чёткие изображения на высокопиксельных экранах</li>
+                        <li><strong>Lazy Loading</strong> - эффективная загрузка контента</li>
+                        <li><strong>CSS Grid & Flexbox</strong> - современные подходы к вёрстке</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Демонстрация object-fit -->
+            <section class="tech-section">
+                <h2 class="section__title">Демонстрация object-fit свойств</h2>
+                
+                <div class="object-fit-demo">
+                    <div class="object-fit-item">
+                        <img src="../images/mice.jpg" alt="Cover пример" class="object-fit-cover">
+                        <span><strong>object-fit: cover</strong><br>Используется для аватаров и карточек</span>
+                    </div>
+                    <div class="object-fit-item">
+                        <img src="../images/mice.jpg" alt="Contain пример" class="object-fit-contain">
+                        <span><strong>object-fit: contain</strong><br>Для логотипов и важных изображений</span>
+                    </div>
+                    <div class="object-fit-item">
+                        <img src="../images/mice.jpg" alt="Fill пример" class="object-fit-fill">
+                        <span><strong>object-fit: fill</strong><br>Растягивание с искажением пропорций</span>
+                    </div>
                 </div>
             </section>
         </main>
@@ -267,7 +385,6 @@
                 </div>
 
                 <div class="modal__actions">
-                   
                     <button type="submit" class="btn btn--secondary">Отмена</button>
                     <button type="button" class="btn btn--primary" onclick="submitForm()">Отправить</button>
                 </div>
@@ -307,7 +424,6 @@
             alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
 
             contactModal.close();
-
             form.reset();
         }
 

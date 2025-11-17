@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практики - Адаптивные изображения</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body class="page page--practices">
+    <div class="theme-switcher">
+        <button class="theme-switcher__button" onclick="toggleTheme()">🌓 Сменить тему</button>
+    </div>
+    
+    <div class="page__container">
+        <header class="header">
+            <h1 class="header__title">Практики адаптивных изображений</h1>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item nav__item--active">
+                    <a class="nav__link" href="practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section class="practices">
+                <h2 class="section__title">Практические примеры адаптивных изображений</h2>
+                
+                <div class="tech-section">
+                    <h3 class="tech-section__title">1. Базовые принципы адаптивности</h3>
+                    
+                    <div class="image-demo">
+                        <h4>Адаптивное изображение с фиксированной высотой</h4>
+                        <div class="image-container">
+                            <img src="../images/mice.jpg" 
+                                 alt="Пример адаптивного изображения"
+                                 class="responsive-image"
+                                 loading="lazy">
+                        </div>
+                        <div class="explanation">
+                            <p><strong>CSS:</strong> <code>width: 100%; height: auto;</code></p>
+                            <p>Изображение занимает всю доступную ширину контейнера, сохраняя пропорции.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-section">
+                    <h3 class="tech-section__title">2. Современные форматы изображений</h3>
+                    
+                    <div class="image-demo">
+                        <h4>Picture element с fallback</h4>
+                        <div class="image-container">
+                            <picture>
+                                <source type="image/avif" srcset="../images/mice.avif">
+                                <source type="image/webp" srcset="../images/mice.webp">
+                                <img src="../images/mice.jpg" 
+                                     alt="Пример picture element"
+                                     class="responsive-image"
+                                     loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="explanation">
+                            <p>Браузер выбирает наиболее подходящий формат в порядке приоритета:</p>
+                            <ol>
+                                <li>AVIF (самый современный)</li>
+                                <li>WebP (хорошая поддержка)</li>
+                                <li>JPEG (фолбэк для старых браузеров)</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-section">
+                    <h3 class="tech-section__title">3. Адаптивность для разных устройств</h3>
+                    
+                    <div class="image-demo">
+                        <h4>Разные изображения для разных разрешений</h4>
+                        <div class="image-container">
+                            <picture>
+                                <source media="(min-width: 1200px)" srcset="../images/wide-desktop.jpg">
+                                <source media="(min-width: 768px)" srcset="../images/tablet.jpg">
+                                <img src="../images/mobile.jpg" 
+                                     alt="Адаптивное изображение для разных устройств"
+                                     class="responsive-image"
+                                     loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="explanation">
+                            <p>Медиа-запросы в &lt;picture&gt; позволяют загружать оптимизированные версии:</p>
+                            <ul>
+                                <li><strong>≥1200px:</strong> wide-desktop.jpg (для больших экранов)</li>
+                                <li><strong>768px-1199px:</strong> tablet.jpg (для планшетов)</li>
+                                <li><strong>&lt;768px:</strong> mobile.jpg (для смартфонов)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-section">
+                    <h3 class="tech-section__title">4. Поддержка высокопиксельных дисплеев</h3>
+                    
+                    <div class="image-demo">
+                        <h4>Retina display с srcset</h4>
+                        <div class="image-container" style="text-align: center;">
+                            <img src="../images/icon-1x.png"
+                                 srcset="../images/icon-1x.png 1x, ../images/icon-2x.png 2x"
+                                 alt="Иконка с поддержкой Retina"
+                                 class="retina-image"
+                                 width="150" height="150">
+                        </div>
+                        <div class="explanation">
+                            <p>Атрибут <code>srcset</code> позволяет указать разные версии изображения:</p>
+                            <ul>
+                                <li><strong>1x:</strong> для обычных экранов (icon-1x.png)</li>
+                                <li><strong>2x:</strong> для Retina/высокопиксельных экранов (icon-2x.png)</li>
+                            </ul>
+                            <p>Браузер автоматически определяет плотность пикселей и загружает подходящую версию.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-section">
+                    <h3 class="tech-section__title">5. Управление отображением в контейнерах</h3>
+                    
+                    <div class="image-demo">
+                        <h4>Свойства object-fit</h4>
+                        <div class="object-fit-demo">
+                            <div class="object-fit-item">
+                                <img src="../images/mice.jpg" alt="Cover пример" class="object-fit-cover">
+                                <span><strong>cover</strong><br>Заполняет контейнер с обрезкой</span>
+                            </div>
+                            <div class="object-fit-item">
+                                <img src="../images/mice.jpg" alt="Contain пример" class="object-fit-contain">
+                                <span><strong>contain</strong><br>Вписывает полностью с полями</span>
+                            </div>
+                            <div class="object-fit-item">
+                                <img src="../images/mice.jpg" alt="Fill пример" class="object-fit-fill">
+                                <span><strong>fill</strong><br>Растягивает, искажая пропорции</span>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <p><strong>object-fit</strong> контролирует как изображение заполняет свой контейнер:</p>
+                            <ul>
+                                <li><code>cover</code> - лучший выбор для большинства случаев (карточки, галереи)</li>
+                                <li><code>contain</code> - когда важно показать изображение полностью (логотипы, диаграммы)</li>
+                                <li><code>fill</code> - используется редко, так как искажает пропорции</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-section">
+                    <h3 class="tech-section__title">6. Адаптивные галереи и сетки</h3>
+                    
+                    <div class="image-demo">
+                        <h4>CSS Grid с контейнерными запросами</h4>
+                        <div class="adaptive-gallery">
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img class="gallery-image" 
+                                         src="../images/gallery1.jpg" 
+                                         alt="Проект 1"
+                                         loading="lazy">
+                                </div>
+                                <div class="gallery-caption">
+                                    <h5>Проект 1</h5>
+                                    <p>Адаптивная вёрстка</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img class="gallery-image" 
+                                         src="../images/gallery2.jpg" 
+                                         alt="Проект 2"
+                                         loading="lazy">
+                                </div>
+                                <div class="gallery-caption">
+                                    <h5>Проект 2</h5>
+                                    <p>Современные форматы</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img class="gallery-image" 
+                                         src="../images/gallery3.jpg" 
+                                         alt="Проект 3"
+                                         loading="lazy">
+                                </div>
+                                <div class="gallery-caption">
+                                    <h5>Проект 3</h5>
+                                    <p>Retina поддержка</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img class="gallery-image" 
+                                         src="../images/gallery4.jpg" 
+                                         alt="Проект 4"
+                                         loading="lazy">
+                                </div>
+                                <div class="gallery-caption">
+                                    <h5>Проект 4</h5>
+                                    <p>Оптимизация производительности</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <p>Использование CSS Grid с контейнерными запросами позволяет создавать truly адаптивные макеты:</p>
+                            <ul>
+                                <li><strong>Десктоп:</strong> 4 колонки</li>
+                                <li><strong>Планшет:</strong> 2 колонки</li>
+                                <li><strong>Мобильный:</strong> 1 колонка</li>
+                            </ul>
+                            <p>Контейнерные запросы (<code>@container</code>) реагируют на размер конкретного контейнера, а не всего окна.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-section">
+                    <h3 class="tech-section__title">7. Оптимизация производительности</h3>
+                    
+                    <div class="explanation">
+                        <h4>Ключевые техники оптимизации:</h4>
+                        <ul>
+                            <li><strong>Lazy Loading:</strong> <code>loading="lazy"</code> для изображений ниже fold</li>
+                            <li><strong>Modern Formats:</strong> Приоритет AVIF и WebP перед JPEG/PNG</li>
+                            <li><strong>Proper Sizing:</strong> Загрузка только нужных размеров изображений</li>
+                            <li><strong>Compression:</strong> Оптимальное сжатие без потери качества</li>
+                            <li><strong>Caching:</strong> Правильные заголовки кэширования</li>
+                        </ul>
+                        
+                        <h4>Пример lazy loading:</h4>
+                        <pre><code>&lt;img src="image.jpg" 
+     alt="Описание" 
+     loading="lazy" 
+     width="800" 
+     height="600"&gt;</code></pre>
+                        
+                        <p>Атрибут <code>loading="lazy"</code> откладывает загрузку изображения до момента, когда оно приблизится к области просмотра.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__text">© 2025 Практики адаптивных изображений. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+</html>
