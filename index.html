@@ -127,18 +127,14 @@
         </div>
     </div>
 
-    <!-- Техника 2: Picture element с разными форматами -->
     <div class="image-demo">
         <h3>2. Picture element с современными форматами</h3>
         <div class="image-container">
             <picture>
-                <!-- WebP для современных браузеров -->
                 <source type="image/webp" srcset="images/mice.webp">
-                <!-- JPEG для старых браузеров -->
                 <source type="image/jpeg" srcset="images/mice.jpg">
-                <!-- Фолбэк -->
                 <img src="images/mice.jpg" 
-                     alt="Мышь в форматах WebP/JPEG"
+                     alt="9mice в форматах WebP/JPEG"
                      class="responsive-image"
                      loading="lazy">
             </picture>
