@@ -109,30 +109,29 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="tech-section">
-                    <h3 class="tech-section__title">4. Поддержка высокопиксельных дисплеев</h3>
-                    
-                    <div class="image-demo">
-                        <h4>Retina display с srcset</h4>
-                        <div class="image-container" style="text-align: center;">
-                            <img src="../images/icon-1x.jpg"
-                                 srcset="../images/icon-1x.jpg 1x, ../images/icon-2x.jpg 2x"
-                                 alt="Иконка с поддержкой Retina"
-                                 class="retina-image"
-                                 width="150" height="150">
-                        </div>
-                        <div class="explanation">
-                            <p>Атрибут <code>srcset</code> позволяет указать разные версии изображения:</p>
-                            <ul>
-                                <li><strong>1x:</strong> для обычных экранов (icon-1x.png)</li>
-                                <li><strong>2x:</strong> для Retina/высокопиксельных экранов (icon-2x.png)</li>
-                            </ul>
-                            <p>Браузер автоматически определяет плотность пикселей и загружает подходящую версию.</p>
-                        </div>
-                    </div>
-                </div>
-
+<div class="tech-section">
+    <h3 class="tech-section__title">4. Поддержка высокопиксельных дисплеев</h3>
+    
+    <div class="image-demo">
+        <h4>Retina display с srcset</h4>
+        <div class="image-container" style="text-align: center;">
+            <img src="../images/mice.jpg"
+                 srcset="../images/mice.jpg 1x, ../images/mice.jpg 2x"
+                 alt="Иконка с поддержкой Retina"
+                 class="retina-image"
+                 width="150" height="150"
+                 style="border-radius: 50%; object-fit: cover;">
+        </div>
+        <div class="explanation">
+            <p>Атрибут <code>srcset</code> позволяет указать разные версии изображения:</p>
+            <ul>
+                <li><strong>1x:</strong> для обычных экранов (стандартное качество)</li>
+                <li><strong>2x:</strong> для Retina/высокопиксельных экранов (то же изображение, но браузер масштабирует его)</li>
+            </ul>
+            <p>Браузер автоматически определяет плотность пикселей и загружает подходящую версию.</p>
+        </div>
+    </div>
+</div>
                 <div class="tech-section">
                     <h3 class="tech-section__title">5. Управление отображением в контейнерах</h3>
                     
