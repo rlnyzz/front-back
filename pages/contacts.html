@@ -326,6 +326,45 @@
         border-left: 4px solid var(--color-primary);
         margin-top: var(--space-md);
     }
+
+    .contacts__container {
+        display: grid;
+        gap: var(--space-lg);
+        margin-bottom: var(--space-xl);
+    }
+
+    .contacts__info {
+        background: var(--color-surface);
+        padding: var(--space-lg);
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--shadow-md);
+    }
+
+    .contacts__item {
+        margin-bottom: var(--space-md);
+        padding-bottom: var(--space-sm);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .contacts__item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .contacts__item strong {
+        display: block;
+        margin-bottom: var(--space-xs);
+        color: var(--color-primary);
+    }
+
+    .contacts__item a {
+        color: var(--color-accent);
+        text-decoration: none;
+    }
+
+    .contacts__item a:hover {
+        text-decoration: underline;
+    }
     </style>
 </head>
 <body class="page page--contacts">
@@ -379,22 +418,22 @@
                 <div class="contacts__container">
                     <div class="contacts__info" role="region" aria-labelledby="contact-details-heading">
                         <h3 id="contact-details-heading" class="visually-hidden">Контактные данные</h3>
-                        <p class="contacts__item">
+                        <div class="contacts__item">
                             <strong>Адрес электронной почты:</strong> 
-                            <a href="mailto:Zazedkin1@mail.ru" aria-label="Написать письмо на Zazedkin1@mail.ru">Zazedkin1@mail.ru</a>
-                        </p>
-                        <p class="contacts__item">
+                            <a href="mailto:Zazedkin1@mail.ru">Zazedkin1@mail.ru</a>
+                        </div>
+                        <div class="contacts__item">
                             <strong>Адрес:</strong> 
                             <span>г. Москва, ул. Пушкина, д. Колотушкина</span>
-                        </p>
-                        <p class="contacts__item">
+                        </div>
+                        <div class="contacts__item">
                             <strong>Телефон:</strong> 
-                            <a href="tel:+74951234567" aria-label="Позвонить по номеру +7 495 123-45-67">+7 (495) 123-45-67</a>
-                        </p>
-                        <p class="contacts__item">
+                            <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+                        </div>
+                        <div class="contacts__item">
                             <strong>Время работы:</strong> 
                             <span>Пн-Пт: 9:00-18:00</span>
-                        </p>
+                        </div>
                     </div>
                     
                     <button class="contact-button" 
